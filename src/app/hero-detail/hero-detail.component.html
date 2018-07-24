@@ -1,0 +1,32 @@
+
+<select>
+  <option (click)="select()" *ngFor="let country of item1s | async" value="{{country.id}}">
+    {{country.name}}
+  </option>
+</select>
+
+
+ <input type="text" [(ngModel)]="msgVal">
+ <input type="text" [(ngModel)]="value">
+ <button (click)="login()" *ngIf="!name">Submit</button>
+ <br>
+{{msgVal}} {{value}}
+<div class="col-md-12">
+<div class="col-md-6">
+  
+<ul>
+  <li class="text" *ngFor="let item of item1s | async">
+    {{item.id}}
+  </li>
+  <li class="text" *ngFor="let item1 of item1s | async">
+      {{item1.name}}
+    </li>
+</ul></div>
+</div>
+
+<div class="col-md-6">
+  <ul>
+    <li class="text" *ngFor="let item of items | async">
+      {{item | json}}
+    </li>
+  </ul></div>

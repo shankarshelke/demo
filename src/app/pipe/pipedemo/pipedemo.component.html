@@ -1,0 +1,15 @@
+<p>
+  pipedemo works! {{title | titlecase}}
+</p>
+
+<p>Today's Date : {{todaysdate | date : 'dd/MM/yyyy'}}<p>
+
+<p>Today's Time : {{todaysdate | date : 'hh:mm:ss'}}<p>
+
+<p>Amount Is : {{amount | currency:'INR'}}<p>
+
+<!-- <p>Cube of {{amount | currency:'INR'}}  Is : {{amount | cube | currency:'INR'}}<p> -->
+
+<p>Cube of {{number}} Is : {{number | cube}}<p>
+
+<p>{{name | greeting}}<p>

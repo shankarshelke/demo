@@ -1,0 +1,50 @@
+<p>
+  country works!
+</p>
+
+{{title}}
+
+<h2> Post service All</h2>
+
+{{userInformation|json}}
+
+<!-- User Name: <input type="text" value="job" [(ngModel)]="userName">
+Job: <input type="text" value="job" [(ngModel)]="job">
+
+<button (click)="addUser()">Save</button> -->
+
+User id: <input type="text"  [(ngModel)]="id" >
+User Name: <input type="text" [(ngModel)]="userName">
+User Password: <input type="text"  [(ngModel)]="pass">
+
+<button (click)="addUser()">Save</button>
+<button (click)="getUser()">Get AllUser</button>
+<button (click)="putUser()">Set User</button>
+<button (click)="deleteUser()">Delete</button>
+
+<br>
+
+<button (click)="getCountry()">Get Country</button>
+<input type="text" [(ngModel)]="countryName">
+<select [(ngModel)]="countryName" (ngModelChange)="getCountry()">
+  <option *ngFor = "let country of countryObjs" value="{{country.name}}" >{{country.name}}</option>
+</select>
+<!-- <input type="text" [(ngModel)]="countryName"> -->
+
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Capital</th>
+    <th>Currency</th>
+    <th>Flag</th>
+  </tr>
+
+  <tr *ngFor = "let country of countryObj">
+    <td>{{country.name}}</td>
+    <td>{{country.capital}}</td>
+    <td>{{country.currencies[0].symbol}}</td>
+    <td> <img src="{{country.flag}}" style="width:100px;height:100px" alt=""></td>
+  </tr>
+</table>

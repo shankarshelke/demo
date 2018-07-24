@@ -1,0 +1,42 @@
+<p>
+  list works!
+</p>
+
+<div class="container">
+  <p>Show all users</p>
+  <ul>
+  <li *ngFor="let user of users | async">
+       {{ user.name | json }}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedHero">
+  <h2>{{ selectedHero.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedHero.name" placeholder="name">
+    </label>
+  </div>
+
+</div>
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+      [class.selected]="hero === selectedHero"
+      (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+
+
+ <ul>
+          <li class="text" *ngFor="let item of items | async">
+            {{item.name}}
+          </li>
+          <li class="text" *ngFor="let item of items | async">
+            {{item.id}}
+          </li>
+        </ul>

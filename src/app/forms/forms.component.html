@@ -1,0 +1,39 @@
+<h2>Pipe Demo</h2>
+<h4>Name Title Case: {{name|titlecase}}</h4>
+<h4>Name Upper Case: {{name|uppercase}}</h4>
+<h4>Name Lower Case: {{name|lowercase}}</h4>
+<h4>Json Data: {{data|json}}</h4>
+<h4>Today Date: {{today|date:'dd-MM-yyyy'}}</h4>
+<h4>Amount Currency: {{amount|currency:'INR'}}</h4>
+<h4>The Cube Of {{number}} Is {{number|cube}}</h4>
+<hr><br>
+
+<h1>
+ {{title}}
+</h1>
+{{studentInfo.value | json}}
+<form #studentInfo="ngForm" (ngSubmit)="saveStudantInfo(studentInfo.value)">
+  <div class="form-group">
+    <label for="First Name">First Name</label>
+    <input type="text" class="form-control" name="firstName"  required [(ngModel)]="shankar">
+  </div>
+  <div [hidden]="fname.valid" class="alert alert-danger">
+    First Name is requred.
+  </div>
+
+  <div class="form-group">
+      <label for="Last Name">Last Name</label>
+      <input type="text" class="form-control" name="lastName" [(ngModel)]="lastName">
+    </div>
+    <div ngModelGroup="Address">
+      <div class="form-group">
+        <label for="City">City</label>
+        <input type="text" class="form-control" name="city" [(ngModel)]="city">
+      </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary">
+      </div>
+</form>
+
+

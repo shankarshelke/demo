@@ -1,0 +1,35 @@
+
+
+  <h1>
+    Welcome to my shankar {{ title }}!
+  </h1>
+    <hr>
+    <h1>{{title}}</h1>
+
+
+    <div>
+      
+      Contact
+      <input type="text" [(ngModel)]="contact">
+      <br>
+      Message
+        <input type="text" [(ngModel)]="msg">
+        <br>
+        Last number
+        <button (click)="sendmsg()">Send Message</button>
+        <br>
+
+
+        <nav>
+          <a routerLink="/list" routerLinkActive="active">List</a>
+          <a routerLink="/demo" routerLinkActive="active">Demo</a>
+          <a routerLink="/parent" routerLinkActive="active">Parent</a>
+          <a routerLink="/hero" routerLinkActive="active">Hero</a>
+          <a routerLink="/Uploadfile" routerLinkActive="active">uploadfile</a>
+          <a routerLink="/Country" routerLinkActive="active">Country Details</a>
+          <a routerLink="/Studant" routerLinkActive="active">Studant Details</a>
+          <a routerLink="/Employee" routerLinkActive="active">Employee Details</a>
+          <a routerLink="/Routing" routerLinkActive="active">Routing Demo</a>
+          <a routerLink="/Pipe" routerLinkActive="active">Pipe Demo</a>
+        </nav>
+        <router-outlet></router-outlet>

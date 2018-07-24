@@ -1,0 +1,73 @@
+<p>
+  fileupload works!
+</p>
+
+<div *ngIf="currentUpload">
+  <div class="progress">
+    <div class="progress-bar progress-bar-animated" [ngStyle]="{ 'width': currentUpload?.progress + '%' }"></div>
+  </div>
+  Progress: {{currentUpload?.name}} | {{currentUpload?.progress}}% Complete
+</div>
+    <label>
+       <input type="file" (change)="detectFiles($event)">
+    </label>
+    <button
+            [disabled]="!selectedFiles"
+            (click)="uploadSingle()">
+      Upload Single
+    </button>
+    <label>
+       <input type="file" (change)="detectFiles($event)" multiple>
+    </label>
+      <button
+              [disabled]="!selectedFiles"
+              (click)="uploadMulti()">
+        Upload Multiple
+      </button>
+
+<br>
+
+<div id="spinner">
+</div>
+
+<div>
+  <form action="">
+    <input type="file" id="selectFile" name="selectFile">
+
+    <input type="button" (click)="uploadImage()" name="submit" value="File Upload">
+  </form>
+</div>
+{{tableDatas | json}}
+<img src="{{tableDatas.fillpath}}" alt="{{tableDatas.filename}}" style="width:100px;height:100px" >
+
+<table>
+<tr>
+  <th>Name</th>
+  <th>Image</th>
+</tr>
+<tr *ngFor="let item of tableData">
+  <td >{{item.filename}}</td>
+  <td><img src="{{item.fullpath}}" alt="{{item.filename}}" style="width:100px;height:100px" ></td>
+</tr>
+
+</table>
+
+<!-- <table>
+  <tr>
+    <th>Name</th>
+    <th>Image</th>
+  </tr>
+  <tr *ngFor="let item of fileData">
+    <td >{{item.filename}}</td>
+    <td><img src="{{item.fullpath}}" alt="{{item.filename}}" style="width:100px;height:100px" ></td>
+  </tr>
+  
+  </table> -->
+
+  
+  <!-- <div *ngFor="let items of item | async">
+    <h4>{{items.name}}</h4>
+    <img src="{{items.url}}" alt="" style="height:100px;width:100px;">
+  </div> -->
+  
+

@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h3>Name  :   <span>{{selectedRecored.selectName}}</span></h3>
+<h3>City  :   <span>{{selectedRecored.selectCity}}</span></h3>
+<h3>Salary: <span></span>{{selectedRecored.selectSalary}}</h3>
+<hr>
+<root-demo
+[name]="emp.empName"
+[city]="emp.empCity"
+[salary]="emp.empSalary"
+(selectedRecord)="displayRecord($event)"
+*ngFor="let emp of empData"
+></root-demo>
